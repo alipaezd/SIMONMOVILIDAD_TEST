@@ -7,11 +7,9 @@ services:
       dockerfile: Dockerfile
     container_name: simon-backend
     environment:
-      # Modo desarrollo y cadena de conexión a SQLite
       - ASPNETCORE_ENVIRONMENT=Development
       - ConnectionStrings__DefaultConnection=Data Source=/app/data/simonmovilidad.db
     volumes:
-      # Monta el volumen donde se almacenará la base SQLite
       - sqlite_data:/app/data
     ports:
       - "5000:5000"

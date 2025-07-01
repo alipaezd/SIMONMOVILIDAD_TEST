@@ -72,8 +72,6 @@ using (var scope = app.Services.CreateScope())
 }
 
 app.UseCors("AllowReact");
-
-
 app.MapPost("/api/auth/register", async (RegisterRequest req, MyDbContext db) =>
 {
     if (await db.Users.AnyAsync(u => u.Username == req.Username))

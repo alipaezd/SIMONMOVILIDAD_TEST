@@ -21,8 +21,13 @@ export default function Dashboard() {
     api.get('/api/vehicles')
        .then(res => setVehicles(res.data))
        .catch(err => {
-         if (err.response?.status === 401) handleLogout();
-       })
+        if (err.__queued) {
+          console.log('Encolada la creación de vehículos (offline).');
+        } else if (!navigator.onLine) {
+          console.log('Offline: mostrando lista de cache.');
+        } else if (err.response?.status === 401) {
+          handleLogout();
+        }       })
        .finally(() => setLoading(false));
   }, []);
 

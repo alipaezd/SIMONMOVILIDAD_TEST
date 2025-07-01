@@ -46,10 +46,19 @@ export default function VehicleDetail() {
   useEffect(() => {
     // Fetch inicial
     api.get(`/api/vehicles/${id}/readings`)
-      .then(res => setReadings(res.data))
-      .catch(err => {
-        if (err.response?.status === 401) nav("/login");
+      .then(res => {
+          console.log("🚀 Vehicles:", res.data);
+        setReadings(res.data)
       })
+      .catch(err => {
+          if (err.__queued) {
+            console.log('Lectura encolada (offline).');
+          } else if (!navigator.onLine) {
+            console.log('Offline: mostrando lecturas de cache.');
+          } else if (err.response?.status === 401) {
+            nav('/login');
+          }      
+        })
       .finally(() => setLoading(false));
 
     // Conectar SignalR
@@ -57,7 +66,6 @@ export default function VehicleDetail() {
       newReading => {
         console.log("📡 Nuevo reading recibido:", newReading,newReading.vehicleId,id);
         if (Number(newReading.vehicleId) === Number(id) ) {
-          // 1) Si el reading es del vehículo actual, lo añadimos al array
           setReadings(prev => [...prev, newReading]);
         }
 

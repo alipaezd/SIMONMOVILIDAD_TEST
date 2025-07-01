@@ -7,14 +7,17 @@ import Dashboard      from './components/Dashboard';
 import NewVehicle     from './components/NewVehicle';
 import VehicleDetail  from './components/VehicleDetail';
 import { useAuth }    from './contexts/AuthContext';
-
+import { OnlineStatusProvider } from './contexts/OnlineStatusContext';
+import OfflineBanner            from './components/OfflineBanner';
 function PrivateRoute({ children }) {
   const { token } = useAuth();
   return token ? children : <Navigate to="/login" />;
 }
 
 export default function App() {
-  return (
+return (
+  <OnlineStatusProvider>
+    <OfflineBanner />
     <BrowserRouter>
       <Routes>
         {/* Rutas públicas */}
@@ -50,5 +53,6 @@ export default function App() {
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </BrowserRouter>
+  </OnlineStatusProvider>
   );
 }

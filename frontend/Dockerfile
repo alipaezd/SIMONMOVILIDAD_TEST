@@ -3,15 +3,13 @@
 FROM node:18-alpine AS build
 WORKDIR /app
 
-# Copia sólo package.json (y el lock si existe)
 COPY package*.json ./
 
-# Usa npm install en lugar de npm ci
 RUN npm install
 RUN npm install react-leaflet leaflet recharts
 RUN npm install @microsoft/signalr
 RUN npm install react-icons
-# Copia el resto y construye
+RUN npm install idb
 COPY . .
 RUN npm run build
 RUN npm install react-router-dom
