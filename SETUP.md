@@ -17,27 +17,3 @@
 ## DETENER
 
     -docker-compose down o CTRL+C
-
-
-Arquitectura de componentes  
-                                +----------------------+
-                                |   Base de Datos      |
-                                |      (SQLite)        |
-                                +----------^-----------+
-                                           |
-                                        EF Core
-                                           |
-+---------------------+    HTTP/JSON    +-----------------------------+
-|  Frontend Web       | ──────────────> |  Backend API (.NET 8)       |
-|  (React + Vite)     |                 |  - Minimal APIs             |
-+---------^-----------+                 |  - JwtService (JWT auth)    |
-          |                             |  - SignalR Hub              |
-          | WebSockets                  +-------------+---------------+
-          |                                            |
-          |                                            |
-          |                                            |
-          v                       WebSockets            v
-+---------------------+  <──────────────────────────> +----------------------+
-| Mobile App          |                                |  Clientes en Tiempo  |
-| (React Native /Expo)|                               |      Real (JS)       |
-+---------------------+                                +----------------------+
