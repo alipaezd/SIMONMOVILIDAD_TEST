@@ -1,4 +1,3 @@
-// frontend/src/components/VehicleDetail.jsx
 import React, { useEffect, useState } from 'react';
 import { FaSignOutAlt, FaCarSide,FaPlus  }    from 'react-icons/fa';
 import NotificationBell               from './NotificationBell';
@@ -29,7 +28,6 @@ export default function VehicleDetail() {
   const fetchReadings = () => {
     setLoading(true);
 
-    // Construir params sólo si hay valor
     const params = {};
     if (fromDate) params.from = new Date(fromDate).toISOString();
     if (toDate)   params.to   = new Date(toDate).toISOString();
@@ -76,7 +74,7 @@ export default function VehicleDetail() {
     // Cleanup al desmontar
     return () => {
       hub.stop();
-      console.log("🚫 Desconectando SensorHub");
+      console.log("desconectando SensorHub");
     };
   }, [id]);
 
@@ -138,10 +136,7 @@ export default function VehicleDetail() {
         </button>
       </div>
 
-      {/* Mapa con ruta y posición */}
       <MapView readings={readings} />
-
-      {/* Gráfico histórico */}
       <HistoryChart readings={readings} />
     </div>
   );

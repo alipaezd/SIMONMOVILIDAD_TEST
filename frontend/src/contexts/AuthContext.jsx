@@ -12,18 +12,16 @@ export const AuthProvider = ({ children }) => {
   const [token, setTokenState] = useState(null);
   const [user, setUser]         = useState(null);
 
-  // Al montar, cargamos token de localStorage (si existe)
   useEffect(() => {
     const storedToken = localStorage.getItem('token');
     if (storedToken) {
       setTokenState(storedToken);
-      // Opcional: podrías decodificar el token o llamar a /api/auth/me
-      // para rellenar `user`. Por ahora lo dejamos null.
+
     }
   }, []);
 
   const login = async (username, password) => {
-    // Llamada a tu endpoint de login
+    // Llamada a  endpoint de login
     const { data } = await api.post('/api/auth/login', { username, password });
     const jwt       = data.token;
     localStorage.setItem('token', jwt);
@@ -51,7 +49,6 @@ export const useAuth = () => {
   return ctx;
 };
 
-// Función helper para leer el token (usa localStorage para que funcione antes de montar React)
 export const getToken = () => {
   return localStorage.getItem('token');
 };

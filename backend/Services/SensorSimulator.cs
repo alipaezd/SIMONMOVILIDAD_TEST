@@ -75,12 +75,11 @@ namespace Simon.Movilidad.Api.Services
                             continue;
                         }
 
-                        // Desestructuramos
-                        var baseLat     = 4.6000m;
-                        var baseLon     = -74.0800m;
+                        var baseLat     = 4.731162835167999m;
+                        var baseLon     = -74.06043890568664m;
                         var latitude    = baseLat + numbers[0] * 0.0001m;
                         var longitude   = baseLon + numbers[1] * 0.0001m;
-                        var fuelLevel   = numbers[2] * 0.1m;
+                        var fuelLevel   = numbers[2] * 0.01m;
                         var temperature = (numbers[3] - 100m) * 25m / 900m + 15m;
                         var speed       = (numbers[4] - 100m) / 900m * 105m + 25m; 
 

@@ -1,4 +1,3 @@
-// frontend/src/components/HistoryChart.jsx
 import React from 'react';
 import {
   ResponsiveContainer,

@@ -1,4 +1,3 @@
-// frontend/src/components/Dashboard.jsx
 import React, { useEffect, useState } from 'react';
 import { FaSignOutAlt, FaCarSide,FaPlus  }    from 'react-icons/fa';
 import NotificationBell               from './NotificationBell';

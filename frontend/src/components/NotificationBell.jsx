@@ -1,4 +1,3 @@
-// frontend/src/components/NotificationBell.jsx
 import React, { useState, useRef, useEffect } from 'react';
 import { FaBell } from 'react-icons/fa';
 import AlertsPanel from './AlertsPanel';

@@ -1,4 +1,3 @@
-// frontend/src/services/ws.js
 import { HubConnectionBuilder, LogLevel } from "@microsoft/signalr";
 import { getToken }                       from "../contexts/AuthContext";
 

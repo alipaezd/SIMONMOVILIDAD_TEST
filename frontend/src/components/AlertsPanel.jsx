@@ -14,7 +14,7 @@ export default function AlertsPanel() {
 
     // 2) Suscripción SignalR
     const hub = startSensorHub(
-      () => {},                  // no necesitamos nuevos readings aquí
+      () => {},                  // onConnected callback
       newAlert => {
         setAlerts(a => [newAlert, ...a]);
       }

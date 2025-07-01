@@ -1,4 +1,3 @@
-// frontend/src/App.jsx
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import LoginPage      from './components/LoginPage';
@@ -20,11 +19,9 @@ return (
     <OfflineBanner />
     <BrowserRouter>
       <Routes>
-        {/* Rutas públicas */}
         <Route path="/login"    element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
 
-        {/* Rutas privadas */}
         <Route
           path="/"
           element={

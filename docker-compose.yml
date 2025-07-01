@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   backend:
     build:
@@ -25,6 +23,21 @@ services:
       - backend
     ports:
       - "3000:80"
+  newman:
+    image: postman/newman:alpine
+    depends_on:
+      - backend      # opcional, para esperar a que la API esté arriba
+    volumes:
+      - ./postman:/etc/newman
+    entrypoint: >
+      sh -c "
+        echo '⏳ Esperando 5s a que la API esté lista…' &&
+        sleep 5 &&
 
+        newman run SimonMovilidad.postman_collection.json \
+          --environment SimonMovilidad.postman_environment.json \
+          --reporters cli,junit \
+          --reporter-junit-export /etc/newman/results.xml
+      "
 volumes:
   sqlite_data:

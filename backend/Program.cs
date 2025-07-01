@@ -474,6 +474,7 @@ app.MapPost("/api/alerts/custom", async (
 
 
 app.Run();
+public partial class Program { }
 
 // DTOs usados
 public record CustomAlertRequest(int VehicleId, string Message);

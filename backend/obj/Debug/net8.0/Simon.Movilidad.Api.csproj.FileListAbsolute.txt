@@ -1,0 +1,6 @@
+/app/obj/Debug/net8.0/Simon.Movilidad.Api.csproj.AssemblyReference.cache
+/app/obj/Debug/net8.0/Simon.Movilidad.Api.GeneratedMSBuildEditorConfig.editorconfig
+/app/obj/Debug/net8.0/Simon.Movilidad.Api.AssemblyInfoInputs.cache
+/app/obj/Debug/net8.0/Simon.Movilidad.Api.AssemblyInfo.cs
+/app/obj/Debug/net8.0/Simon.Movilidad.Api.csproj.CoreCompileInputs.cache
+/app/obj/Debug/net8.0/Simon.Movilidad.Api.MvcApplicationPartsAssemblyInfo.cache

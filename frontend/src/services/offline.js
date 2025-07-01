@@ -1,4 +1,3 @@
-// src/services/offline.js
 import { openDB } from 'idb';
 
 const DB_NAME    = 'simonmovilidad';

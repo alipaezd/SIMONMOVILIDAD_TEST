@@ -8,6 +8,7 @@ RUN dotnet add package BCrypt.Net-Next --version 4.0.2
 
 COPY . .
 RUN dotnet publish -c Release -o /app
+RUN npm install -g newman
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app

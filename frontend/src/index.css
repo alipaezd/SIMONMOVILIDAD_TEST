@@ -1,5 +1,4 @@
 
-/* 1) Variables de color */
 :root {
   --color-bg: #121212;
   --color-bg-alt: #1e1e1e;
@@ -13,14 +12,12 @@
   --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* 2) Reset y box-sizing */
 *, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* 3) Alto completo y fondo global */
 html, body, #root {
   height: 100%;
 }
@@ -32,7 +29,6 @@ body {
   line-height: 1.5;
 }
 
-/* 4) Scrollbar oscuro */
 body::-webkit-scrollbar {
   width: 8px;
 }
@@ -45,7 +41,6 @@ body::-webkit-scrollbar-thumb {
   border: 2px solid var(--color-bg);
 }
 
-/* 5) Enlaces */
 a {
   color: var(--color-primary);
   text-decoration: none;
@@ -54,7 +49,6 @@ a:hover {
   text-decoration: underline;
 }
 
-/* 6) Cabeceras y párrafos */
 h1, h2, h3, h4, h5, h6 {
   color: var(--color-text);
   margin-bottom: 0.5rem;
@@ -64,13 +58,11 @@ p {
   color: var(--color-text-secondary);
 }
 
-/* 7) Listas */
 ul, ol {
   padding-left: 1.5rem;
   margin-bottom: 1rem;
 }
 
-/* 8) Formularios e inputs */
 input, select, textarea {
   background-color: var(--color-surface);
   color: var(--color-text);
@@ -86,7 +78,6 @@ input:focus, select:focus, textarea:focus {
   outline: none;
 }
 
-/* 9) Botones */
 button {
   background-color: var(--color-primary);
   color: var(--color-bg);
@@ -101,7 +92,6 @@ button:hover {
   filter: brightness(1.1);
 }
 
-/* 10) Tablas */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -119,7 +109,6 @@ tbody tr:nth-child(even) {
   background-color: var(--color-bg-alt);
 }
 
-/* 11) Código inline */
 code {
   background-color: var(--color-bg-alt);
   color: var(--color-text);
@@ -128,13 +117,11 @@ code {
   font-family: 'Courier New', Courier, monospace;
 }
 
-/* 12) Contenedor genérico */
 .container {
   max-width: 1024px;
   margin: 0 auto;
   padding: 1rem;
 }
-/* --- header layout --- */
 .dashboard-header {
   display: flex;
   align-items: center;
@@ -142,20 +129,17 @@ code {
   margin-bottom: 1rem;
 }
 
-/* Título */
 .dashboard-title {
   font-size: 1.5rem;
   color: var(--color-text);
 }
 
-/* Bloque de la campana + logout */
 .header-actions {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-/* Botones de icono */
 .icon-button {
   background: transparent;
   border: none;
@@ -168,12 +152,10 @@ code {
   color: var(--color-error);
 }
 
-/* botón principal “Agregar” */
 .primary-button {
   margin-bottom: 1rem;
 }
 
-/* items de la lista */
 .vehicle-item {
   display: flex;
   align-items: center;
@@ -184,7 +166,6 @@ code {
   color: var(--color-secondary);
 }
 
-/* botón “Ver detalles” en cada fila */
 .secondary-button {
   margin-left: auto;
 }
