@@ -1,0 +1,26 @@
+.notification-bell {
+  position: relative;
+  display: inline-block;
+}
+
+.bell-button {
+  background: transparent;
+  border: none;
+  color: var(--color-text);
+  cursor: pointer;
+  position: relative;
+}
+
+.alerts-dropdown {
+  position: absolute;
+  top: 32px;
+  right: 0;
+  width: 320px;
+  max-height: 400px;
+  overflow-y: auto;
+  background: var(--color-surface);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  border-radius: 4px;
+  z-index: 1000;
+  padding: 0.5rem;
+}
